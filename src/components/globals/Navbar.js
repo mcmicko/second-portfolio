@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
-// import {Link} from 'gatsby';
 import {Transition,animated} from 'react-spring'
 import {Link} from 'react-scroll'
 import classnames from 'classnames'
 
 
+class Navbar extends Component{
+	constructor(props) {
+    super(props);
 
-export default class Navbar extends Component{
-	state = {
-		openNav: false,
-		prevScrollpos: window.pageYOffset,
-		visible: true
-	}
+    this.state = {
+      prevScrollpos: window.pageYOffset,
+			visible: true,
+			openNav: false,			
+    };
+  }
 
 	  // Adds an event listener when the component is mount.
 		componentDidMount() {
-			if (typeof window !== 'undefined') {
 				window.addEventListener("scroll", this.handleScroll);
-			}
 		}
 	
 		// Remove the event listener when the component is unmount.
@@ -48,7 +48,7 @@ export default class Navbar extends Component{
 		} else {
 			classes += 'drugi'
 		}
-		
+	if(typeof window !== 'undefined'){
 		return(
 					<nav
 						className={classnames("navbar", {
@@ -61,11 +61,11 @@ export default class Navbar extends Component{
 						<li><Link className="nav-link" to="contact" spy={true} smooth={true} duration={500}>contact</Link></li>					
 					</ul>
 					<Transition
-          native
-          items={this.state.openNav}
-          from={{ overflow: 'hidden', height: 0 }}
-          enter={[{ height: 'auto' }]}
-          leave={{ height: 0 }}>
+						native
+						items={this.state.openNav}
+						from={{ overflow: 'hidden', height: 0 }}
+						enter={[{ height: 'auto' }]}
+						leave={{ height: 0 }}>
           {show =>
             show && (props => {
 							return(
@@ -87,6 +87,9 @@ export default class Navbar extends Component{
 					</div>							
 				</nav>				
 		)
+	}	return null
+
 	}
 }
 
+export default Navbar;
