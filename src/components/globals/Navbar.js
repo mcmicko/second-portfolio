@@ -4,12 +4,14 @@ import {Link} from 'react-scroll'
 import classnames from 'classnames'
 
 
+
+	
 class Navbar extends Component{
 	constructor(props) {
     super(props);
 
     this.state = {
-      prevScrollpos: window.pageYOffset,
+      prevScrollpos:{},
 			visible: true,
 			openNav: false,			
     };
@@ -17,6 +19,9 @@ class Navbar extends Component{
 
 	  // Adds an event listener when the component is mount.
 		componentDidMount() {
+			if (typeof window !== 'undefined'){
+				this.setState({prevScrollpos: window.pageYOffset}) 
+			}
 				window.addEventListener("scroll", this.handleScroll);
 		}
 	
@@ -48,6 +53,8 @@ class Navbar extends Component{
 		} else {
 			classes += 'drugi'
 		}
+
+			
 	if(typeof window !== 'undefined'){
 		return(
 					<nav
@@ -88,7 +95,6 @@ class Navbar extends Component{
 				</nav>				
 		)
 	}	return null
-
 	}
 }
 
