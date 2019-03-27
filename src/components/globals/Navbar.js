@@ -7,7 +7,7 @@ import classnames from 'classnames'
 export default class Navbar extends Component{
 	state = {
 		openNav: false,
-		prevScrollpos: window.pageYOffset,
+		prevScrollpos: Window.pageYOffset,
 		visible: true
 	}
 
