@@ -4,16 +4,20 @@ import {Transition,animated} from 'react-spring'
 import {Link} from 'react-scroll'
 import classnames from 'classnames'
 
+
+
 export default class Navbar extends Component{
 	state = {
 		openNav: false,
-		prevScrollpos: Window.pageYOffset,
+		prevScrollpos: window.pageYOffset,
 		visible: true
 	}
 
 	  // Adds an event listener when the component is mount.
 		componentDidMount() {
-			window.addEventListener("scroll", this.handleScroll);
+			if (typeof window !== 'undefined') {
+				window.addEventListener("scroll", this.handleScroll);
+			}
 		}
 	
 		// Remove the event listener when the component is unmount.
@@ -44,6 +48,7 @@ export default class Navbar extends Component{
 		} else {
 			classes += 'drugi'
 		}
+		
 		return(
 					<nav
 						className={classnames("navbar", {

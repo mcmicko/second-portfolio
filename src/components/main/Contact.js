@@ -28,7 +28,7 @@ class Contact extends Component {
                 </div>
                 <div className="content">
                   <h3>Twitter</h3>
-                  <p>Olso you can contact me on my twitter</p>
+                  <p>Also you can contact me on my twitter</p>
                 </div>
               </li>
               <li className="tab">
