@@ -1,0 +1,113 @@
+@import 'variables';
+
+
+.particles{
+  height: 100vh;
+  width: 100%;
+}
+#my-card{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  left: 27%;
+  @media(max-width: 500px){
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      top: 40%;
+      left: 5rem;;
+    }
+
+  // #my-image{
+  //   width: 350px;
+  //   box-shadow: 0px 2px 15px 1px $dark;
+  // }
+  #my-name{
+    background: transparent;
+    font-size: 16rem;
+    color: $dark;
+    display: block;
+    margin-top: 4rem;
+    text-shadow: 1px 1px 10px $dark;
+    @media(max-width: 500px){
+      font-size: 4rem;
+    }
+  }  
+  #my-surname{
+    background: transparent;
+    font-size: 16rem;
+    display: block;
+    color: $primary;
+    text-shadow: 1px 1px 10px $primary-dark;
+    @media(max-width: 500px){
+      font-size: 4rem;
+    }
+  }   
+}
+
+
+.scroll-down {
+    position: absolute;
+    left: 49%;
+    bottom: 5vh;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 33px;
+    height: 33px;
+    border-bottom: 2px solid $primary;
+    border-right: 2px solid $primary;
+    z-index: 9;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 2s ease-in-out infinite;
+    -moz-animation: fade_move_down 2s ease-in-out infinite;
+    animation: fade_move_down 2s ease-in-out infinite;
+  @-webkit-keyframes fade_move_down {
+    0% {
+    -webkit-transform:translate(0, -10px) rotate(45deg);
+    opacity: 0;
+   }
+    50% {
+   opacity: 1;
+   }
+    100% {
+    -webkit-transform:translate(0, 10px) rotate(45deg);
+    opacity: 0;
+   }
+   }
+   @-moz-keyframes fade_move_down {
+    0% {
+    -moz-transform:translate(0, -10px) rotate(45deg);
+    opacity: 0;
+   }
+    50% {
+   opacity: 1;
+   }
+    100% {
+    -moz-transform:translate(0, 10px) rotate(45deg);
+    opacity: 0;
+   }
+   }
+   @keyframes fade_move_down {
+    0% {
+    transform:translate(0, -10px) rotate(45deg);
+    opacity: 0;
+   }
+    50% {
+   opacity: 1;
+   }
+    100% {
+    transform:translate(0, 10px) rotate(45deg);
+    opacity: 0;
+   }
+   }
+   @media(max-width: 500px){
+     left: 45%;
+   }
+}

@@ -1,0 +1,184 @@
+@import 'variables';
+
+
+// NAVBAR
+.navbar{
+	background: $dark;
+	width: 100%;
+	position: fixed;
+	z-index: 111;
+  top: 0;
+	transition: all 0.6s ease;
+
+
+	.desktop-nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		@media(max-width: 400px){
+				display: none;
+		}
+
+		li{
+				list-style: none;
+				padding: 1rem 0;
+
+			.nav-link{
+				padding: 1rem 4rem;
+				background: transparent;
+				text-decoration: none;
+				font-size: 24px;
+				color: $primary;
+				cursor: default;
+				transition: all 250ms ease;
+				&:hover{
+					color: $primary-dark;
+					background: $primary;
+				}
+			}
+		}
+	}
+	.mobile-nav{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@media(min-width: 500px){
+			display: none;
+		}
+
+		li{
+			list-style: none;
+			padding: 1rem 0;
+
+			.nav-link{
+				padding: 1rem 4rem;
+				background: transparent;
+				text-decoration: none;
+				font-size: 24px;
+				color: $primary;
+				transition: all 250ms ease;
+				&:hover{
+					color: $primary-dark;
+				}
+			}
+		}
+	}
+	
+	#toggle{
+		position: absolute;
+		height: 3rem;
+		width: 100%;
+		padding: 1rem 4rem;
+		font-size: 24px;
+		background: $primary;
+		border: none;
+		box-shadow: 0 5px 10px 1px black;
+		@media(min-width: 500px){
+				display: none;
+		}
+		.prvi{
+			background:$dark;
+			clip-path: polygon(50% 100%, 0 0, 100% 0);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			animation: pulsiranje 3s infinite;		
+			@keyframes pulsiranje {
+				0%{
+					transform:translate(0, -10px);
+					opacity: 0;
+				}
+				50%{
+					opacity: 1;
+				}
+				100%{
+					transform:translate(0, 0px);
+					opacity: 0;
+				}
+			}
+		}
+		.drugi{
+			clip-path: polygon(50% 0, 0 100%, 100% 100%);
+			background:$dark;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}	
+		#hide{
+			z-index: 1222;
+			position: absolute;
+			left: 44%;
+			animation: hide 5s infinite;
+			@keyframes hide {
+				0%{
+					color: $primary;
+				}
+				50%{
+					color: $dark;
+				}
+				100%{
+					color: $primary;
+				}
+			}
+		}	
+	}	
+	&--hidden{
+		top: -20rem;
+	}
+}
+
+// FOOTER
+footer{
+	position: relative;
+	width: 100%;
+	background: $dark;
+	color: $primary;
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	.on-top{
+		position: absolute;
+		right: 2rem;
+		bottom: 6rem;
+		display: block;
+		text-align: center;
+		font-size: 20px;
+		z-index: 100;
+		cursor: pointer;
+		text-decoration: none;
+		text-shadow: 0;
+		width: 33px;
+		height: 33px;
+		border-top: 3px solid $dark;
+		border-left: 3px solid $dark;
+		transform: translate(-50%, 0%) rotate(45deg);
+		animation: fade_move_top 2s ease-in-out infinite;
+		@media(max-width: 500px){
+			bottom: 5rem;
+		}
+		@keyframes fade_move_top {
+			0% {
+			transform:translate(0, 10px) rotate(45deg);
+			opacity: 0;
+		}
+			50% {
+		opacity: 1;
+		}
+			100% {
+			transform:translate(0, -10px) rotate(45deg);
+			opacity: 0;
+		}
+		}
+		@media(max-width: 500px){
+			left: 45%;
+		}
+	}
+}

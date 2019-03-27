@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'globals';
+@import 'headers';
+@import 'main';
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+	background: $bg-color;
+  font-family: 'Exo 2', sans-serif;
+  overflow-x: hidden;
+  h1{
+    background: $dark;
+    color: $primary;
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    // @media screen and (max-width: 500px){
+    //   font-size: 2.2rem;
+    // }
+  }
+
+}
+
