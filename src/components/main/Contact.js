@@ -6,12 +6,13 @@ class Contact extends Component {
   render() {
     return (
       <Element name="contact">
+        <Fade>
+
         <section name="contact" className="section-contact">
           <div className="container about-grid">
             <Fade>
               <h1>contact</h1>
             </Fade>
-            <Fade>
             <ul className="accordion">
               <li className="tab">
                 <div className="social mail">
@@ -50,9 +51,9 @@ class Contact extends Component {
                 </div>
               </li>
             </ul>
-            </Fade>
           </div>
         </section>            
+        </Fade>
       </Element>
     )
   }

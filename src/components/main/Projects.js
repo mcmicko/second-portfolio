@@ -21,7 +21,7 @@ class Projects extends Component {
                     </a>
                   </div>
                 </div>   
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, vero.</p>     
+                <p>mern(mongodb, express, react, node) stack</p>     
               </div>
             </div>          
           </Fade>
