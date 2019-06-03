@@ -15,6 +15,7 @@ import {Element} from 'react-scroll'
     }
 
     /* Here’s the juicy bit for posting the form submission */
+    handleChange = e => {this.setState({[e.target.name]: e.target.value})}
 
     handleSubmit = e => {
       fetch("/", {
@@ -37,28 +38,10 @@ import {Element} from 'react-scroll'
               <h1>about</h1>          
             </Fade>
             <Fade>
-              <div>
-                <form onSubmit={this.handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                  <p>
-                    <label>
-                      Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      Message: <textarea name="message" value={message} onChange={this.handleChange} />
-                    </label>
-                  </p>
-                   <input type="hidden" name="form-name" value="contact" />
-                  <p>
-                    <button type="submit">Send</button>
-                  </p>
-                </form>                                
+              <div className="about-content">
+                Hello, my name is Milos, I'm 26 years old and I live in Zrenjanin, Serbia. 
+                I have a degree from the Technical Faculty in Zrenjanin, in the field of Industrial Engineering. 
+                My passion is to programing. My hobby grew into love. I like to create something new and funcional in a blank page, and that other people benefit from it.                    
               </div>
             </Fade>
           </div>
